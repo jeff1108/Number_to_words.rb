@@ -60,12 +60,13 @@ def less_than_1000?(num)
 end
 
 def hundreds(num)
-  convert_hundreds(num)
+  number = num.to_s.split('')
+  words = []
+  words << [ZERO_TO_THOUSAND[number[0].to_i], ZERO_TO_THOUSAND[100]].join('-')
+  words << tens(num.to_s.slice(1,2).to_i) if not_divisible_by_100?(num)
+  words.join(' and ')
 end
 
-def convert_hundreds(num)
-  number = num.to_s.split('')
-  hundred = []
-  hundred << [ZERO_TO_THOUSAND[number[0].to_i], ZERO_TO_THOUSAND[100]].join('-')
-  return hundred.join('-')
+def not_divisible_by_100?(num)
+  num % 100 != 0
 end
