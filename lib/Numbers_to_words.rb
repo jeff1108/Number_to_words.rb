@@ -34,6 +34,8 @@ def number_to_words(num)
     tens(num)
   elsif less_than_1000?(num)
     hundreds(num)
+  else
+    thousand(num)
   end
 end
 
@@ -69,4 +71,9 @@ end
 
 def not_divisible_by_100?(num)
   num % 100 != 0
+end
+
+def thousand(num)
+  number = num.to_s.split('')
+  [ZERO_TO_THOUSAND[number[0].to_i], ZERO_TO_THOUSAND[1000]].join('-')
 end
