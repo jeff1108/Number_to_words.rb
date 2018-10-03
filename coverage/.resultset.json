@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/hungkakin/Project/exe4/lib/Number_to_words.rb": [
+      "/Users/hungkakin/Project/exe4/lib/Numbers_to_words.rb": [
         1,
         null,
         null,
@@ -14,7 +14,15 @@
         null,
         null,
         null,
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -27,9 +35,30 @@
         null,
         1,
         5,
+        5,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        5,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
         null
       ]
     },
-    "timestamp": 1538577221
+    "timestamp": 1538581288
   }
 }

@@ -1,4 +1,4 @@
-require 'Number_to_words'
+require 'Numbers_to_words'
 
 describe 'Number_To_Words' do
   context 'Number betweem 0 to 10' do
