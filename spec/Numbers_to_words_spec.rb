@@ -15,13 +15,31 @@ describe 'Number_To_Words' do
     end
   end
 
-  context 'Number betweem 11 to 20' do
+  context 'Number less than 100' do
     it 'returns 11 in words' do
       expect(number_to_words(11)).to eq('eleven')
     end
 
     it 'returns 20 in words' do
       expect(number_to_words(20)).to eq('twenty')
+    end
+
+    it 'display units in tens' do
+      expect(number_to_words(70)).to eq('seventy')
+    end
+
+    it 'returns 99 in words' do
+      expect(number_to_words(99)).to eq('ninety-nine')
+    end
+  end
+
+  context 'Number betweem 100 to 1000' do
+    it 'returns 100 in words' do
+      expect(number_to_words(100)).to eq('one-hundred')
+    end
+
+    it 'returns 900 in words' do
+      expect(number_to_words(900)).to eq('nine-hundred')
     end
   end
 end

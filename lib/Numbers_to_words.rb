@@ -32,24 +32,40 @@ ZERO_TO_THOUSAND = { 0 => 'zero',
 def number_to_words(num)
   if less_than_100?(num)
     tens(num)
+  elsif less_than_1000?(num)
+    hundreds(num)
   end
 end
 
 private
 
 def less_than_100?(num)
-  num <= 100
+  num < 100
 end
 
 def tens(num)
-  ZERO_TO_THOUSAND[num] || twenty_to_hundred(num)
+  ZERO_TO_THOUSAND[num] || convert_tens(num)
 end
 
-def twenty_to_hundred(num)
+def convert_tens(num)
   number = [0]
-  first_numebr = num.to_s.split('').first
-  second_numebr = num.to_s.split('').last.to_i
-  tens = number.unshift(first_numebr).join.to_i
-  tens_digit = [ZERO_TO_THOUSAND[tens],ZERO_TO_THOUSAND[second_numebr]].join('-')
+  first_number = num.to_s.split('').first
+  second_number = num.to_s.split('').last.to_i
+  tens = number.unshift(first_number).join.to_i
+  tens_digit = [ZERO_TO_THOUSAND[tens],ZERO_TO_THOUSAND[second_number]].join('-')
+end
 
+def less_than_1000?(num)
+  num < 1000
+end
+
+def hundreds(num)
+  convert_hundreds(num)
+end
+
+def convert_hundreds(num)
+  number = num.to_s.split('')
+  hundred = []
+  hundred << [ZERO_TO_THOUSAND[number[0].to_i], ZERO_TO_THOUSAND[100]].join('-')
+  return hundred.join('-')
 end
